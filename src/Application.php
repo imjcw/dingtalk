@@ -67,6 +67,8 @@ class Application extends Container
         Attendance\ServiceProvider::class,
         Department\ServiceProvider::class,
         Conversation\ServiceProvider::class,
+        Cspace\ServiceProvider::class,
+        FileUpload\ServiceProvider::class,
         Kernel\Providers\ClientServiceProvider::class,
         Kernel\Providers\LoggerServiceProvider::class,
         Kernel\Providers\ServerServiceProvider::class,
