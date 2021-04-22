@@ -70,10 +70,7 @@ class AccessToken
      */
     public function refresh()
     {
-        $response = (new Client($this->app))->requestRaw('gettoken', 'GET', ['query' => [
-            'appkey' => $this->app['config']->get('app_key'),
-            'appsecret' => $this->app['config']->get('app_secret'),
-        ]]);
+        $response = $this['auth']->getToken();
 
         return tap($this->castResponseToType($response, 'array'), function ($value) {
             if (0 !== $value['errcode']) {

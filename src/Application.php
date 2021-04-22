@@ -48,7 +48,9 @@ class Application extends Container
      * @var array
      */
     protected $providers = [
-        Auth\ServiceProvider::class,
+        Auth\OAuthServiceProvider::class,
+        Auth\SsoServiceProvider::class,
+        Auth\AuthServiceProvider::class,
         Chat\ServiceProvider::class,
         Role\ServiceProvider::class,
         User\ServiceProvider::class,
