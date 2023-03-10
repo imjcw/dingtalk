@@ -31,8 +31,18 @@ type robot struct {
 	validateMethod int
 }
 
+// RobotContract .
+type RobotContract interface {
+	SendText(t RobotText) error
+	SendLink(l RobotLink) error
+	SendMarkdown(m RobotMarkdown) error
+	SendActionCard(a RobotActionCard) error
+	SendActionCardButton(a RobotActionCardButton) error
+	SendFeedCard(f RobotFeedCard) error
+}
+
 // NewRobot robot instance
-func NewRobot(accessToken string, accessSecret string, validateMethod int) robot {
+func NewRobot(accessToken string, accessSecret string, validateMethod int) RobotContract {
 	return robot{
 		accessToken:    accessToken,
 		accessSecret:   accessSecret,
